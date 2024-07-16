@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+    <title>Form</title>
+</head>
+<body>
+    <form action="welcome.html" method="get">Login Form<br>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required><br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password"><br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"><br>
+    <label for="phone">Phone:</label>
+    <input type="tel" id="phone" name="phone"><br>
+    <label for="date">Date of Birth:</label>
+    <input type="date" id="date" name="date"><br>
+    <label for="Gender">Gender :</label>
+    <input type="radio" id="Male" name="Gender"> Male
+    <input type="radio" id="Female" name="Gender"> Female
+    <label for="Hobbies">Hobbies :</label>
+    <input type="checkbox" id="Reading" name="Hobbies"> Reading
+    <input type="checkbox" id="Writing" name="Hobbies"> Writing
+    <input type="checkbox" id="Travelling" name="Hobbies"> Travelling
+    <input type="checkbox" id="Gaming" name="Hobbies"> Gaming
+    <label for="Country">Country :</label>
+    <select id="Country" name="Country">
+        <option value="Select" disabled>Select</option>
+        <option value="India">India</option>
+        <option value="USA">USA</option>
+        <option value="UK">UK</option>
+        <option value="Australia">Australia</option>
+    </select>
+    <button  onclick="Display()">Click to acitvate Form</button>
+    </form>
+    <script>
+        function Display() {
+            //alert("The form was submitted");
+            var username = document.getElementById("username").value;
+            alert(Document.write("Hello, "+username));
+
+        }
+    </script>
+</body>

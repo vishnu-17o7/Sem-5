@@ -1,0 +1,25 @@
+body {
+    line-height: 1.6;
+    background-color: #f8f9fa;
+    display: flex;
+}
+
+.resume {
+    display: flex;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 30px;
+    background: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.left-column {
+    padding-right: 20px;
+    border-right: 1px solid #8282c1;
+}
+
+.right-column {
+    padding-left: 20px;
+}
+

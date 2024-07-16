@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>Restaurant Delivery Invoice</title>
+	<style>
+		.invoice-box {
+			max-width: 800px;
+			margin: auto;
+			padding: 20px;
+			border: 1px solid #eee;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+			font-size: 16px;
+			line-height: 24px;
+			font: Palatino, URW Palladio L, serif;
+			color: #555;
+			background-color: #fffbf0;
+		}
+
+		.invoice-box table {
+			width: 100%;
+			line-height: inherit;
+			text-align: left;
+		}
+
+		.invoice-box table td {
+			padding: 5px;
+			vertical-align: top;
+		}
+
+		.invoice-box table tr td:nth-child(2) {
+			text-align: right;
+		}
+
+		.invoice-box table tr.top table td {
+			padding-bottom: 10px;
+		}
+
+		.invoice-box table tr.top table td.title {
+			font-size: 45px;
+			line-height: 45px;
+			color: #333;
+		}
+
+		.invoice-box table tr.information table td {
+			padding-bottom: 20px;
+		}
+
+		.invoice-box table tr.heading td {
+			background: #ffe4b5;
+			border-bottom: 1px solid #ddd;
+			font-weight: bold;
+			color: #d2691e;
+		}
+
+		.invoice-box table tr.details td {
+			padding-bottom: 20px;
+		}
+
+		.invoice-box table tr.item td {
+			border-bottom: 1px solid #eee;
+		}
+
+		.invoice-box table tr.item.last td {
+			border-bottom: none;
+		}
+
+		.invoice-box table tr.total td:nth-child(2) {
+			border-top: 2px solid #eee;
+			font-weight: bold;
+			color: #d2691e;
+		}
+
+		.invoice-box.rtl {
+			direction: rtl;
+		}
+
+		.invoice-box.rtl table {
+			text-align: right;
+		}
+
+		.invoice-box.rtl table tr td:nth-child(2) {
+			text-align: left;
+		}
+
+		.invoice-box title {
+			display: flex;
+			flex-direction: row;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="invoice-box">
+		<table cellpadding="0" cellspacing="0">
+			<tr class="top">
+				<td colspan="2">
+					<table>
+						<tr>
+							<td class="title">
+								<img src="logo.png" style="width: 100%; max-width: 50px" />
+								<h2
+									style="font-size: 38px;">
+									YUMMY RESTAURENT</h2>
+							</td>
+
+							<td>
+								Invoice #: 456<br />
+								Created: July 15, 2024<br />
+								Due: August 15, 2024
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+
+			<tr class="information">
+				<td colspan="2">
+					<table>
+						<tr>
+							<td>
+								<br />
+								987, Example Street<br />
+								Example City, Example State 54321
+							</td>
+
+							<td>
+								Customer:<br />
+								Arya Stark<br />
+								arya@proton.com
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+
+			<tr class="heading">
+				<td>Payment Method</td>
+
+				<td>Reference</td>
+			</tr>
+
+			<tr class="details">
+				<td>UPI</td>
+
+				<td>35647354745</td>
+			</tr>
+
+			<tr class="heading">
+				<td>Item</td>
+
+				<td>Price</td>
+			</tr>
+
+			<tr class="item">
+				<td>Pasta</td>
+
+				<td>&#8377; 120.00</td>
+			</tr>
+
+			<tr class="item">
+				<td>Burger</td>
+
+				<td>&#8377; 80.00</td>
+			</tr>
+
+			<tr class="item">
+				<td>Jamun</td>
+
+				<td>&#8377; 40.00</td>
+			</tr>
+
+			<tr class="item last">
+				<td>Tiramisu</td>
+
+				<td>&#8377; 60.00</td>
+			</tr>
+			<tr class="item last">
+				<td>Delivery Charge</td>
+
+				<td>&#8377; 100.00</td>
+			</tr>
+
+			<tr class="total">
+				<td></td>
+
+				<td>Total: &#8377; 400.00</td>
+			</tr>
+		</table>
+	</div>
+</body>
+
+</html>
