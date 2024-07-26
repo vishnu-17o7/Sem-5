@@ -1,0 +1,131 @@
+body {
+    font-family: Arial, sans-serif;
+    /*display: flex;
+    align-items: center;*/
+
+}
+
+#top-div {
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+}
+
+#top-div img {
+    height: 50px;
+    vertical-align: middle;
+}
+
+#top-div h1 {
+    display: inline;
+    margin-left: 20px;
+    vertical-align: middle;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+}
+
+#left-div {
+    width: 20%;
+    float: left;
+    background-color: #e6e6e6;
+    padding: 10px;
+}
+
+#left-div a {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+    text-decoration: none;
+}
+
+#right-div {
+    width: 75%;
+    float: right;
+    padding: 10px;
+    background-color: #ffffff;
+}
+
+#login-form {
+    margin: 50px auto;
+    width: 340px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ccc;
+
+}
+
+#login-form label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+#login-form input {
+    width: 95%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#login-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#login-form button:hover {
+    background-color: #45a049;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+img {
+    height: 100px;
+}
+
+button {
+    padding: 8px 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#register-form {
+    margin: 50px auto;
+    width: 340px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ccc;
+    padding-right: 122px;
+}

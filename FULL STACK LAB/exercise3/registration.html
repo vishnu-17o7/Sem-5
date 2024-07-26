@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Book Store - Registration</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var password = document.getElementById("password").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+
+            var namePattern = /^[a-zA-Z\s\w]+$/;
+            var passwordPattern = /^.{6,}$/;
+            var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            var phonePattern = /^\d{10}$/;
+
+            if (!name.match(namePattern)) {
+                alert("Name should contain alphabets and be at least 6 characters long.");
+                return false;
+            }
+
+            if (!password.match(passwordPattern)) {
+                alert("Password should be at least 6 characters long.");
+                return false;
+            }
+
+            if (!email.match(emailPattern)) {
+                alert("Invalid email format. Please enter a valid email address.");
+                return false;
+            }
+
+            if (!phone.match(phonePattern)) {
+                alert("Phone number should contain 10 digits only.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div id="top-div">
+        <img src="logo.png" alt="Logo">
+        <h1>Coimbatore Institute of Technology</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="login.html">Login</a>
+            <a href="registration.html">Registration</a>
+            <a href="catalogue.html">Catalogue</a>
+            <a href="cart.html">Cart</a>
+        </nav>
+    </div>
+
+    <div id="left-div">
+        <a href="cse.html">CSE</a>
+        <a href="ece.html">ECE</a>
+        <a href="eee.html">EEE</a>
+        <a href="civil.html">CIVIL</a>
+    </div>
+
+    <div id="right-div">
+        <div id="login-form">
+            <form action="login.html" method="get" onsubmit="return validateForm()" id="registration-form">
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name"><br><br>
+        
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password"><br><br>
+        
+                <label for="email">E-mail ID:</label><br>
+                <input type="text" id="email" name="email"><br><br>
+        
+                <label for="phone">Phone Number:</label><br>
+                <input type="text" id="phone" name="phone"><br><br>
+        
+                <label for="sex">Sex:</label><br>
+                <input type="radio" id="male" name="sex" value="male">
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="sex" value="female">
+                <label for="female">Female</label><br><br>
+        
+                <label for="dob">Date of Birth:</label><br>
+                <input type="date" id="dob" name="dob"><br><br>
+                </select><br><br>
+                <label for="languages">Languages Known:</label><br>
+                <input type="checkbox" id="english" name="languages" value="english">
+                <label for="english">English</label>
+                <input type="checkbox" id="telugu" name="languages" value="telugu">
+                <label for="telugu">Telugu</label>
+                <input type="checkbox" id="hindi" name="languages" value="hindi">
+                <label for="hindi">Hindi</label>
+                <input type="checkbox" id="tamil" name="languages" value="tamil">
+                <label for="tamil">Tamil</label><br><br>
+        
+                <label for="address">Address:</label><br>
+                <textarea id="address" name="address" rows="4" cols="50"></textarea><br><br>
+        
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
