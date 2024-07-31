@@ -1,12 +1,21 @@
 body {
-    font-family: Arial, sans-serif;
-    /*display: flex;
-    align-items: center;*/
-
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    position: relative;
+    background-color: rgb(28, 25, 25);
+    background-image: url("bg.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
 }
 
 #top-div {
-    background-color: #f2f2f2;
     padding: 20px;
     text-align: center;
 }
@@ -25,13 +34,12 @@ body {
 nav a {
     margin: 0 15px;
     text-decoration: none;
-    color: #333;
+    color: whitesmoke;
 }
 
 #left-div {
     width: 20%;
     float: left;
-    background-color: #e6e6e6;
     padding: 10px;
 }
 
@@ -46,16 +54,13 @@ nav a {
     width: 75%;
     float: right;
     padding: 10px;
-    background-color: #ffffff;
 }
 
 #login-form {
     margin: 50px auto;
     width: 340px;
-    background-color: #f9f9f9;
     padding: 20px;
     border: 1px solid #ccc;
-
 }
 
 #login-form label {
@@ -98,10 +103,7 @@ table, th, td {
 th, td {
     padding: 12px;
     text-align: left;
-}
-
-th {
-    background-color: #f2f2f2;
+    color: white; 
 }
 
 img {
@@ -124,8 +126,73 @@ button:hover {
 #register-form {
     margin: 50px auto;
     width: 340px;
-    background-color: #f9f9f9;
     padding: 20px;
     border: 1px solid #ccc;
     padding-right: 122px;
+}
+
+nav {
+    margin-bottom: 20px;
+    color: aliceblue;
+
+
+}
+ .dropbtn {
+    background-color: transparent;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    
+  }
+.dropbtn:hover {
+    background-color: transparent;
+}
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #0e0e0ea4;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 10px;
+  }
+  
+  .dropdown-content a {
+    color: whitesmoke;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-radius: 10px;
+    }
+
+    
+    .dropdown-content a:active {
+        color: purple;
+    }
+    .dropdown-content a:visited {
+        color: purple;
+    }
+  
+  .dropdown-content a:hover {background-color: #ddd;
+    color: black;}
+  
+  .dropdown:hover .dropdown-content {display: block;}
+
+  
+.alert-button {
+    padding: 8px 12px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.alert-button:hover {
+    background-color: #d32f2f;
 }
