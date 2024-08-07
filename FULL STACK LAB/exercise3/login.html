@@ -23,19 +23,13 @@
                     <a href="eee.html">EEE</a>
                     <a href="civil.html">CIVIL</a>
                 </div>
+            </div>
         </nav>
     </div>
-    <!--
-    <div id="left-div">
-        <a href="cse.html">CSE</a>
-        <a href="ece.html">ECE</a>
-        <a href="eee.html">EEE</a>
-        <a href="civil.html">CIVIL</a>
-    </div>-->
 
     <div id="right-div">
         <div id="login-form">
-            <form action="index.html" method="get">
+            <form  method="get">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" pattern="^[a-zA-Z\s]+$">
                 <br>
@@ -46,5 +40,19 @@
             </form>
         </div>
     </div>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var username = document.getElementById('username').value;
+
+            if (username === 'admin') {
+                window.location.href = 'Admincatalogue.html';
+            }else{
+                window.location.href = 'index.html';
+            }
+        });
+    </script>
 </body>
 </html>

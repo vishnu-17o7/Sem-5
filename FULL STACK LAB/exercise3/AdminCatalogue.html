@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin - Catalogue Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="AdminCatalogue.js"></script>
+</head>
+<body>
+    <div id="top-div">
+        <img src="logo.png" alt="Logo">
+        <h1>Coimbatore Institute of Technology - Admin</h1>
+        <nav>
+            <a href="AdminCatalogue.html">Manage Catalogue</a>
+            <a href="login.html">Logout</a>
+        </nav>
+    </div>
+
+    <div id="admin-catalogue">
+        <h2>Manage Catalogue</h2>
+        <form id="book-form">
+            <input type="hidden" id="book-index">
+            <label for="cover">Cover URL:</label>
+            <input type="text" id="cover" required>
+            <label for="title">Title:</label>
+            <input type="text" id="title" required>
+            <label for="author">Author:</label>
+            <input type="text" id="author" required>
+            <label for="publisher">Publisher:</label>
+            <input type="text" id="publisher" required>
+            <label for="price">Price:</label>
+            <input type="number" id="price" required>
+            <button type="submit">Save</button>
+        </form>
+
+        <table id="admin-catalogue-table">
+            <thead>
+                <tr>
+                    <th>Cover</th>
+                    <th>Book</th>
+                    <th>Author</th>
+                    <th>Publisher</th>
+                    <th>Price</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- JavaScript will populate the catalogue here -->
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
