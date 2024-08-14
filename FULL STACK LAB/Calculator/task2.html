@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare Two Numbers</title>
+</head>
+<body>
+    <script>
+        // Prompt the user to enter two integers
+        let num1 = parseInt(prompt("Enter the first integer:"));
+        let num2 = parseInt(prompt("Enter the second integer:"));
+
+        // Prepare the output message
+        let message;
+
+        if (num1 > num2) {
+            message = `<h1>${num1} is greater than ${num2}</h1>`;
+        } else if (num1 < num2) {
+            message = `<h1>${num2} is greater than ${num1}</h1>`;
+        } else {
+            message = `<h1>The two numbers are equal</h1>`;
+        }
+
+        // Display the message in the browser
+        document.write(message);
+    </script>
+</body>
+</html>

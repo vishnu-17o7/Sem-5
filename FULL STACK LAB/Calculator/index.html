@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Calculator</title>
+  <link rel="stylesheet" href="styles/dark.css" id="theme" />
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <div class="header-container">
+        <h1 id="toast">Calculator</h1>
+        <div class="top-buttons">
+        </div>
+      </div>
+      <div class="row">
+        <input type="text" name="result" id="result" placeholder="Result" readonly />
+        <input type="button" value="C" onclick="result.value=''" id="clear-button" />
+      </div>
+      <div class="row">
+        <input type="button" value="1" onclick="liveScreen(1)" />
+        <input type="button" value="2" onclick="liveScreen(2)" />
+        <input type="button" value="3" onclick="liveScreen(3)" />
+        <input type="button" value="+" onclick="liveScreen('+')" />
+        <input type="button" value="<" onclick="moveLeft()" id="arrow-left" />
+      </div>
+      <div class="row">
+        <input type="button" value="4" onclick=" liveScreen(4)" />
+        <input type="button" value="5" onclick=" liveScreen(5)" />
+        <input type="button" value="6" onclick=" liveScreen(6)" />
+        <input type="button" value="-" onclick="liveScreen('-')" />
+        <input type="button" value=">" onclick="moveRight()" id="arrow-right" />
+      </div>
+      <div class="row">
+        <input type="button" value="7" onclick="liveScreen(7)" />
+        <input type="button" value="8" onclick="liveScreen(8)" />
+        <input type="button" value="9" onclick=" liveScreen(9)" />
+        <input type="button" value="x" onclick="liveScreen('*')" />
+        <input type="button" value="BS" onclick="backspace()" />
+      </div>
+
+      <div class="row">
+        <input type="button" value="%" onclick="liveScreen('%')" />
+        <input type="button" value="^" onclick="liveScreen('**')" />
+        <input type="button" value="(" onclick="liveScreen('(')" />
+        <input type="button" value=")" onclick="liveScreen(')')" />
+        <input type="button" value="=" onclick="calculate(result.value)" />
+      </div>
+
+      <div class="row">
+        <input type="button" value="sin" onclick="liveScreen('Math.sin(')" />
+        <input type="button" value="cos" onclick="liveScreen('Math.cos(')" />
+        <input type="button" value="tan" onclick="liveScreen('Math.tan(')" />
+        <input type="button" value="log" onclick="liveScreen('Math.log(')" />
+      </div>
+
+      <div class="row">
+        <input type="button" value="sqrt" onclick="liveScreen('Math.sqrt(')" />
+        <input type="button" value="!" onclick="liveScreen('factorial(')" />
+        <input type="button" value="pi" onclick="liveScreen('Math.PI')" />
+        <input type="button" value="e" onclick="liveScreen('Math.E')" />
+      </div>
+
+      <div class="row">
+        <input type="button" value="x" onclick="liveScreen('x')" />
+        <input type="button" value="y" onclick="liveScreen('y')" />
+        <input type="button" value="z" onclick="liveScreen('z')" />
+        <input type="button" value="Graph" onclick="graphFunction()" />
+      </div>
+
+      <script src="scripts/script.js"></script>
+</body>
+
+</html>
