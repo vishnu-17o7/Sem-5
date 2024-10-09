@@ -1,0 +1,12 @@
+FROM tensorflow/tensorflow
+
+WORKDIR /app
+
+COPY . /app
+
+# RUN pip install --upgrade pip && \
+#     pip install keras
+
+COPY ex13.py /app/script.py
+
+CMD ["python", "ex13.py"]
