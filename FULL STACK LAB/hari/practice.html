@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    #principleamt,#rate,#time, p{
+        display: inline-block;
+    }
+</style>
+</head>
+<body>
+    <div id="container">
+    <form id="interestform">
+    <p>enter initial amount</p>
+    <input id="principalamt" type="number" placeholder="enter initial amt" required><br>
+    <p>enter initial amount</p>
+    <input id="rate"  type="number" placeholder="enter initial amt" required><br>
+    <p>enter initial amount</p>
+    <input id="time"  type="number" placeholder="enter initial amt" required><br>
+    <button id="submit">submit</button>
+    </form>
+    <div id="result">
+
+    </div>
+    
+
+    <script>
+        document.getElementById('interestform').addEventListener('submit',function(event){
+            event.preventDefault();
+
+            let iniamt = parseFloat(document.getElementById('principalamt').value);
+            let rate = parseFloat(document.getElementById('rate').value);
+            let time = parseFloat(document.getElementById('time').value);
+
+            let interest = (iniamt * rate * time)/100;
+            let totalamt = iniamt + interest;
+
+            document.getElementById('result').innerHTML = `total amount after ${time} is ${totalamt}`;
+        });
+
+    </script>
+    
+</body>
+</html>

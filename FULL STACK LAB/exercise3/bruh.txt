@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary Slip App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Salary Slip Application</h1>
+    
+    <form id="salary-form">
+        <h2>Create/Update Salary Slip</h2>
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+        
+        <h3>Earnings</h3>
+        <label for="basic">Basic:</label>
+        <input type="number" id="basic" required>
+        
+        <label for="da">DA:</label>
+        <input type="number" id="da" required>
+        
+        <label for="hra">HRA:</label>
+        <input type="number" id="hra" required>
+        
+        <label for="wa">WA:</label>
+        <input type="number" id="
+        wa" required>
+        
+        <label for="ca">CA:</label>
+        <input type="number" id="ca">
+        
+        <label for="cca">CCA:</label>
+        <input type="number" id="cca">
+        
+        <label for="ma">MA:</label>
+        <input type="number" id="ma" required>
+        
+        <label for="sales-incentive">Sales Incentive:</label>
+        <input type="number" id="sales-incentive">
+        
+        <label for="leave-encashment">Leave Encashment:</label>
+        <input type="number" id="leave-encashment">
+        
+        <label for="holiday-wages">Holiday Wages:</label>
+        <input type="number" id="holiday-wages">
+        
+        <label for="special-allowance">Special Allowance:</label>
+        <input type="number" id="special-allowance">
+        
+        <label for="bonus">Bonus:</label>
+        <input type="number" id="bonus">
+        
+        <label for="individual-incentive">Individual Incentive:</label>
+        <input type="number" id="individual-incentive">
+        
+        <h3>Deductions</h3>
+        <label for="pf">PF:</label>
+        <input type="number" id="pf" required>
+        
+        <label for="esi">ESI:</label>
+        <input type="number" id="esi" required>
+        
+        <label for="tds">TDS:</label>
+        <input type="number" id="tds">
+        
+        <label for="lop">LOP:</label>
+        <input type="number" id="lop">
+        
+        <label for="pt">PT:</label>
+        <input type="number" id="pt">
+        
+        <label for="spl-deduction">Special Deduction:</label>
+        <input type="number" id="spl-deduction">
+        
+        <label for="ewf">EWF:</label>
+        <input type="number" id="ewf">
+        
+        <label for="cd">CD:</label>
+        <input type="number" id="cd">
+        
+        <h3>Actions</h3>
+        <button type="button" onclick="addSalarySlip()">Add/Update Slip</button>
+    </form>
+    
+    <h2>Salary Slips</h2>
+    <table id="salary-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Total Earnings</th>
+                <th>Total Deductions</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data will be inserted here -->
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input {
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+let salarySlips = [];
+
+function addSalarySlip() {
+    const name = document.getElementById('name').value;
+    const basic = parseFloat(document.getElementById('basic').value) || 0;
+    const da = parseFloat(document.getElementById('da').value) || 0;
+    const hra = parseFloat(document.getElementById('hra').value) || 0;
+    const wa = parseFloat(document.getElementById('wa').value) || 0;
+    const ca = parseFloat(document.getElementById('ca').value) || 0;
+    const cca = parseFloat(document.getElementById('cca').value) || 0;
+    const ma = parseFloat(document.getElementById('ma').value) || 0;
+    const salesIncentive = parseFloat(document.getElementById('sales-incentive').value) || 0;
+    const leaveEncashment = parseFloat(document.getElementById('leave-encashment').value) || 0;
+    const holidayWages = parseFloat(document.getElementById('holiday-wages').value) || 0;
+    const specialAllowance = parseFloat(document.getElementById('special-allowance').value) || 0;
+    const bonus = parseFloat(document.getElementById('bonus').value) || 0;
+    const individualIncentive = parseFloat(document.getElementById('individual-incentive').value) || 0;
+
+    const pf = parseFloat(document.getElementById('pf').value) || 0;
+    const esi = parseFloat(document.getElementById('esi').value) || 0;
+    const tds = parseFloat(document.getElementById('tds').value) || 0;
+    const lop = parseFloat(document.getElementById('lop').value) || 0;
+    const pt = parseFloat(document.getElementById('pt').value) || 0;
+    const splDeduction = parseFloat(document.getElementById('spl-deduction').value) || 0;
+    const ewf = parseFloat(document.getElementById('ewf').value) || 0;
+    const cd = parseFloat(document.getElementById('cd').value) || 0;
+
+    const totalEarnings = basic + da + hra + wa + ca + cca + ma + salesIncentive + leaveEncashment + holidayWages + specialAllowance + bonus + individualIncentive;
+    const totalDeductions = pf + esi + tds + lop + pt + splDeduction + ewf + cd;
+
+    const salarySlip = {
+        name,
+        totalEarnings,
+        totalDeductions
+    };
+
+    salarySlips.push(salarySlip);
+    renderTable();
+    resetForm();
+}
+
+function renderTable() {
+    const tableBody = document.querySelector('#salary-table tbody');
+    tableBody.innerHTML = '';
+
+    salarySlips.forEach((slip, index) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${slip.name}</td>
+            <td>${slip.totalEarnings.toFixed(2)}</td>
+            <td>${slip.totalDeductions.toFixed(2)}</td>
+            <td>
+                <button onclick="editSalarySlip(${index})">Edit</button>
+                <button onclick="deleteSalarySlip(${index})">Delete</button>
+            </td>
+        `;
+        tableBody.appendChild(row);
+    });
+}
+
+function editSalarySlip(index) {
+    const slip = salarySlips[index];
+    document.getElementById('name').value = slip.name;
+    document.getElementById('basic').value = slip.basic || 0;
+    document.getElementById('da').value = slip.da || 0;
+    document.getElementById('hra').value = slip.hra || 0;
+    document.getElementById('wa').value = slip.wa || 0;
+    document.getElementById('ca').value = slip.ca || 0;
+    document.getElementById('cca').value = slip.cca || 0;
+    document.getElementById('ma').value = slip.ma || 0;
+    document.getElementById('sales-incentive').value = slip.salesIncentive || 0;
+    document.getElementById('leave-encashment').value = slip.leaveEncashment || 0;
+    document.getElementById('holiday-wages').value = slip.holidayWages || 0;
+    document.getElementById('special-allowance').value = slip.specialAllowance || 0;
+    document.getElementById('bonus').value = slip.bonus || 0;
+    document.getElementById('individual-incentive').value = slip.individualIncentive || 0;
+    document.getElementById('pf').value = slip.pf || 0;
+    document.getElementById('esi').value = slip.esi || 0;
+    document.getElementById('tds').value = slip.tds || 0;
+    document.getElementById('lop').value = slip.lop || 0;
+    document.getElementById('pt').value = slip.pt || 0;
+    document.getElementById('spl-deduction').value = slip.splDeduction || 0;
+    document.getElementById('ewf').value = slip.ewf || 0;
+    document.getElementById('cd').value = slip.cd || 0;
+
+    document.querySelector('button[onclick="addSalarySlip

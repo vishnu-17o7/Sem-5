@@ -1,12 +1,26 @@
-FROM tensorflow/tensorflow
+# Use an official Python runtime as the base image
+FROM python:3.9-slim
 
+# Set the working directory in the container
 WORKDIR /app
 
-COPY . /app
+# Copy only the required files
+COPY app.py /app/
+COPY templates/index.html /app/templates/
+COPY requirements.txt /app/
+COPY logistic_regression_model.joblib /app/
 
-# RUN pip install --upgrade pip && \
-#     pip install keras
+# Install the required packages
+RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --upgrade joblib scikit-learn
+RUN pip install --upgrade Flask Werkzeug 
+RUN pip freeze
 
-COPY ex13.py /app/script.py
+# Make port 5000 available to the world outside this container
+EXPOSE 5000
 
-CMD ["python", "ex13.py"]
+# Define environment variable
+ENV FLASK_APP=app.py
+
+# Run app.py when the container launches
+CMD ["flask", "run", "--host", "0.0.0.0"]

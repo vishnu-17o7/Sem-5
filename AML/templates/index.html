@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iris Flower Predictor (PCA)</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; }
+        h1 { color: #333; }
+        form { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 5px; }
+        input[type="number"] { width: 200px; padding: 5px; margin-bottom: 10px; }
+        input[type="submit"] { background-color: #4CAF50; color: white; padding: 10px 15px; border: none; cursor: pointer; }
+        input[type="submit"]:hover { background-color: #45a049; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h1>Iris Flower Predictor (PCA)</h1>
+    {% if error %}
+    <p class="error">{{ error }}</p>
+    {% endif %}
+    <form method="post">
+        <label for="feature1">PCA Feature 1:</label>
+        <input type="number" id="feature1" name="feature1" required step="any">
+        
+        <label for="feature2">PCA Feature 2:</label>
+        <input type="number" id="feature2" name="feature2" required step="any">
+        
+        <input type="submit" value="Predict">
+    </form>
+    
+    {% if prediction is not none %}
+    <h2>Prediction: {{ prediction }}</h2>
+    <p>
+        {% if prediction == 0 %}
+        The model predicts this is an Iris Setosa.
+        {% elif prediction == 1 %}
+        The model predicts this is an Iris Versicolor.
+        {% else %}
+        The model predicts this is an Iris Virginica.
+        {% endif %}
+    </p>
+    {% endif %}
+</body>
+</html>

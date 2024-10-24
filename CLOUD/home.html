@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Ticket Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Movie Ticket Management</h1>
+        <form id="ticket-form">
+            <input type="text" id="Movie-name" placeholder="Movie Name" required>
+            <input type="number" id="Movie-number" placeholder="Movie Number" required>
+            <input type="text" id="Movie-name" placeholder="Movie Name" required>
+            <input type="date" id="journey-date" required>
+            <button type="submit">Add Ticket</button>
+        </form>
+        
+        <h2>Tickets</h2>
+        <ul id="ticket-list"></ul>
+    </div>
+
+    <script>
+        // Selecting DOM elements
+const form = document.getElementById('ticket-form');
+const ticketList = document.getElementById('ticket-list');
+const MovieNameInput = document.getElementById('Movie-name');
+const MovieNumberInput = document.getElementById('Movie-number');
+const journeyDateInput = document.getElementById('journey-date');
+
+// Initialize tickets array from local storage or empty
+let tickets = JSON.parse(localStorage.getItem('tickets')) || [];
+
+// Function to render tickets
+function renderTickets() {
+    ticketList.innerHTML = ''; // Clear current list
+    tickets.forEach((ticket, index) => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+            <span>Movie: ${ticket.MovieName} (#${ticket.MovieNumber})</span>
+            <span>Movie: ${ticket.MovieName}</span>
+            <span>Date: ${ticket.journeyDate}</span>
+            <button class="edit" onclick="editTicket(${index})">Edit</button>
+            <button class="delete" onclick="deleteTicket(${index})">Delete</button>
+        `;
+        ticketList.appendChild(li);
+    });
+}
+
+// Function to add or update a ticket
+function addTicket(e) {
+    e.preventDefault();
+    const MovieName = MovieNameInput.value.trim();
+    const MovieNumber = MovieNumberInput.value.trim();
+    const journeyDate = journeyDateInput.value;
+
+    if (form.dataset.editing) {
+        // Update the existing ticket
+        const index = parseInt(form.dataset.editing);
+        tickets[index] = { MovieName, MovieNumber, MovieName, journeyDate };
+        form.dataset.editing = ''; // Reset editing mode
+    } else {
+        // Add a new ticket
+        tickets.push({ MovieName, MovieNumber, MovieName, journeyDate });
+    }
+
+    localStorage.setItem('tickets', JSON.stringify(tickets)); // Save to local storage
+    renderTickets();
+    form.reset(); // Clear form fields
+}
+
+// Function to delete a ticket
+function deleteTicket(index) {
+    tickets.splice(index, 1);
+    localStorage.setItem('tickets', JSON.stringify(tickets));
+    renderTickets();
+}
+
+// Function to edit a ticket
+function editTicket(index) {
+    const ticket = tickets[index];
+    MovieNameInput.value = ticket.MovieName;
+    MovieNumberInput.value = ticket.MovieNumber;
+    MovieNameInput.value = ticket.MovieName;
+    journeyDateInput.value = ticket.journeyDate;
+    form.dataset.editing = index; // Mark form as editing
+}
+
+// Event listeners
+form.addEventListener('submit', addTicket);
+window.onload = renderTickets;
+
+    </script>
+</body>
+</html>

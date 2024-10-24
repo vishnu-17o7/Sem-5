@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        #mainbox{
+            height:fit-content;
+            border: 2px solid green;
+            display: inline-block;
+            background-color: grey;
+        }
+        </style
+
+    </head>
+    <body>
+        <div id="mainbox">
+            <p>TO DO LIST</p>
+            <input type="text" id="task" placeholder="enter new task">
+            <button id="addtolist"> submit</button>
+
+
+            <script>
+                document.getElementById('addtolist').addEventListener('click',function(){
+                    let taskInput = document.getElementById('task').value.trim();
+                    console.log('taskInput');
+                })
+            </script>
+        </div>
+    </body>
+</html>
